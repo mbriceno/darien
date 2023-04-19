@@ -122,6 +122,10 @@ docker-compose exec web python manage.py migrate
 
 # Finalmente crear el usuario para acceder a la aplicación
 docker-compose exec web python manage.py createsuperuser
+
+email: pruebas@yopmail.com
+user: pruebas
+pass: 1q2w3e4r5t
 ```
 
 La interfaz del proyecto estará disponible en la URL: `http://localhost:8000`
