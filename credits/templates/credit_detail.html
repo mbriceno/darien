@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ credit.client.full_name }} - {{ credit.bank.name }}</h1>
+  <p>Description: {{ credit.description }}</p>
+  <p>Minimum Payment: {{ credit.min_payment }}</p>
+  <p>Maximum Payment: {{ credit.max_payment }}</p>
+  <p>Credit Term: {{ credit.credit_term }} months</p>
+  <a class="btn btn-sm btn-warning" role="button" href="{% url 'credit_update' object.pk %}">Edit</a>
+  <a class="btn btn-sm btn-outline-primary" role="button" href="{% url 'credit_list' %}">Back</a>
+{% endblock %}

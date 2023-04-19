@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Bank List</h1>
+  <table class="table ">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for bank in object_list %}
+        <tr>
+          <td>{{ bank.name }}</td>
+          <td>{{ bank.get_btype_display }}</td>
+          <td>{{ bank.address }}</td>
+          <td>
+            <a class="btn btn-sm btn-primary" role="button" href="{% url 'bank_detail' pk=bank.pk %}">Detail</a>
+            <a class="btn btn-sm btn-warning" role="button" href="{% url 'bank_update' pk=bank.pk %}">Update</a>
+            <a class="btn btn-sm btn-danger" role="button" href="{% url 'bank_delete' pk=bank.pk %}">Delete</a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4">No banks found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'bank_create' %}">Create a new bank</a>
+{% endblock %}

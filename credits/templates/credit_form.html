@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h1>{% if credit.pk %}Update{% else %}Create{% endif %} Credit</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input class="btn btn-success" role="button" type="submit" value="Save">
+    <a class="btn btn-outline-danger" role="button" href="{% url 'credit_list' %}">Back</a>
+  </form>
+{% endblock %}

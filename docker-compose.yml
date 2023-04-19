@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres
+    hostname: db
+    environment:
+      - POSTGRES_DB=dariendb
+      - POSTGRES_USER=darien_user
+      - POSTGRES_PASSWORD=1q2w3e4r5t
+  web:
+    build: .
+    command: bash -c "sleep 7 && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Delete "{{ object }}"</h1>
+  <p>Are you sure you want to delete this credit?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" role="button" type="submit">Yes, delete it</button>
+    <a class="btn btn-outline-danger" role="button" href="{% url 'credit_list' %}">No, take me back</a>
+  </form>
+  
+{% endblock %}

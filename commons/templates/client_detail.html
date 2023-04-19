@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Client Detail</h1>
+  <p>Name: {{ object.full_name }}</p>
+  <p>Birthdate: {{ object.birthdate }}</p>
+  <p>Age: {{ object.years_old }}</p>
+  <p>Nationality: {{ object.nationality }}</p>
+  <p>Address: {{ object.address }}</p>
+  <p>Email: {{ object.email }}</p>
+  <p>Phone: {{ object.phone }}</p>
+  <p>Type: {{ object.ptype }}</p>
+  <p>Bank: {{ object.bank }}</p>
+  <a class="btn btn-sm btn-warning" role="button" href="{% url 'client_update' object.pk %}">Edit</a>
+  <a class="btn btn-sm btn-outline-primary" role="button" href="{% url 'client_list' %}">Back</a>
+{% endblock %}
