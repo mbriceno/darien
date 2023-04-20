@@ -46,7 +46,7 @@ class ClientCreateView(CreateView):
     model = Client
     form_class = ClientForm
     template_name = 'client_form.html'
-    success_url = reverse_lazy('client:client_list')
+    success_url = reverse_lazy('client_list')
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -63,7 +63,7 @@ class ClientUpdateView(UpdateView):
     model = Client
     form_class = ClientForm
     template_name = 'client_form.html'
-    success_url = reverse_lazy('client:client_list')
+    success_url = reverse_lazy('client_list')
 
     def form_valid(self, form):
         response = super().form_valid(form)
