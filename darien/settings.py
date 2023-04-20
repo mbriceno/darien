@@ -33,6 +33,7 @@ DEBUG = env.bool('DEBUG', True)
 TEST_HOST = list(env.list('TEST_HOST', default=[]))
 ALLOWED_HOSTS = ['*'] + TEST_HOST
 
+CSRF_TRUSTED_ORIGINS = TEST_HOST
 
 # Application definition
 
